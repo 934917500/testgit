@@ -1,0 +1,126 @@
+body{
+	background-color: #efefef;
+}
+.navbar{
+	height: 60px;
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+    margin: 0;
+    top: 0;
+    z-index: 100;
+    position: fixed;
+}
+.navbar h2{
+	height: 60px;
+	color: #555;
+	line-height: 60px;
+	padding-left: 50px;
+}
+.slider{
+	width: 200px;
+	background-color: #272727;
+	position: fixed;
+	margin-top: 60px;
+	display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;    
+    flex-direction: column;
+    background-color: #272727;
+    min-height: calc(100vh - 60px);
+    flex-shrink: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    z-index: 99;
+}
+.slider-nav{
+	width: 100%;
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.nav-title{
+	font-size: 80%;
+    text-transform: uppercase;
+    padding: .8rem 1rem;
+    color: #777;
+}
+.active>a{
+	font-size: 16px;
+	color: #ddd !important; 
+}
+.nav-item{
+	width: 100%;
+	font-size: 14px;
+}
+.nav-item>a{
+	color: #9d9d9d;
+	display: block;
+    text-decoration: none;
+    padding: 16px 24px;
+    transition: all ease-in 0.4s;
+}
+.nav-item>a:hover{
+	color: #ddd;
+}
+
+.content{
+	margin-top: 60px;
+	margin-left: 200px;
+	padding: 32px;
+}
+.content_box{
+	background-color: #fff;
+	overflow: hidden;
+	padding-bottom: 15px;
+}
+.content_box h3{
+	margin-top: 30px;
+	margin-left: 32px;
+	margin-bottom: 15px;
+	font-size: 24px;
+}
+.userlist{
+	margin-left: 36px;
+	margin-bottom: 15px;
+	clear: both;
+}
+.userlist>li{
+	margin-bottom: 10px; 
+}
+.morelist{
+	width: 100%;
+	clear: both;
+}
+.morelist>li{
+	float: left;
+	padding: 5px 10px;
+	width: 150px;
+}
+.submit{
+	display: block;
+	margin: 20px auto;
+}
+.idform{
+	margin-left: 32px;
+	margin-bottom: 10px;
+}
+.idform>input{
+	border: 1px solid #ccc;
+}
+.idform>textarea{
+	border: 1px solid #ccc;
+	margin-left: 114px;
+	min-height: 200px;
+	min-width: 200px;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>anti-bullying反校园霸凌后台管理</title>
+	<link rel="icon" href="img/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="css/style.css">	<link rel="stylesheet" type="text/css" href="css/background.css">
+</head>
+<body>
+	<nav class="navbar">
+		<h2>anti-bullying反校园霸凌后台管理中心</h2>
+	</nav>
+	<div class="slider">
+		<nav class="slider-nav">
+			<ul>
+				<li class="nav-title">导航</li>
+				<li class="nav-item active"><a href="./backgroud.html">账号管理</a></li>
+				<li class="nav-item"><a href="./background_date.html">数据查询</a></li>
+				<li class="nav-item"><a href="./background_grade.html">成绩录入</a></li>
+				<li class="nav-item"><a href="./background_infrom.html">新闻发布</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div class="content">
+		<div class="content_box">
+			<h3>账号管理</h3>
+			<form action="backgroud.html" method="post" accept-charset="utf-8">
+				<ul class="userlist clearfloat">
+					<li>
+						<ul class="morelist clearfloat">
+							<li>id</li>
+							<li>姓名</li>
+							<li>手机号</li>
+							<li>学校</li>
+							<li>密码</li>
+							<li>全选<input type="checkbox" name="id" id="all" onclick="setChecked(this)"></li>
+						</ul>
+					</li>
+					<li>
+						<ul class="morelist clearfloat">
+							<li>0001</li>
+							<li>王大狗</li>
+							<li>15935117201</li>
+							<li>实验小学</li>
+							<li>wa123456</li>
+							<li><input type="checkbox" name="id" onclick="setChecked(this)"></li>
+						</ul>
+					</li>
+					<li>
+						<ul class="morelist clearfloat">
+							<li>0002</li>
+							<li>王二狗</li>
+							<li>15935117202</li>
+							<li>实验中学</li>
+							<li>dd5678</li>
+							<li><input type="checkbox" name="id" onclick="setChecked(this)"></li>
+						</ul>
+					</li>
+					<li>
+						<ul class="morelist clearfloat">
+							<li>0003</li>
+							<li>王三狗</li>
+							<li>15935117203</li>
+							<li>太原理工大学</li>
+							<li>da8965</li>
+							<li><input type="checkbox" name="id" onclick="setChecked(this)"></li>
+						</ul>
+					</li>
+					<li>
+						<ul class="morelist clearfloat">
+							<li>0002</li>
+							<li>王四狗</li>
+							<li>15935117204</li>
+							<li>清华大学</li>
+							<li>dc5874</li>
+							<li><input type="checkbox" name="id" onclick="setChecked(this)"></li>
+						</ul>
+					</li>
+				</ul>
+				<div style="clear: both;"></div>
+				<button type="submit" class="submit">删除</button>
+			</form>
+		</div>
+		
+
+		
+	</div>
+	<script>
+		var morelist = document.getElementsByClassName("morelist");
+		var getId,getValue;
+		for (var i = 1; i < morelist.length; i++) {
+				getId = morelist[i].getElementsByTagName("li")[0].innerHTML;
+				getValue = document.getElementsByName("id")[i-1];
+				getValue.Value = getId;
+		}
+		// 复选框全选
+		function setChecked(obj) 
+		{  
+	        
+	        var chbs=document.getElementsByName("id");//获取到复选框的名称  
+	       
+			//全选
+			//JS的if判断中Undefined类型视为false，其他类型视为true；
+			//obj.id是定义过的值，类型为非Undefined，所以视为true。
+		    if(obj.id)
+			{
+				for(var i=1;i<chbs.length;i++)
+				{  		
+				//若全选框的结果为选中，则进行全选操作,否则进入下一步
+				//obj.checked表示复选框当前状态，已选为true，未选为false。
+				    if(obj.checked == true)
+					{ 
+						var chb = chbs[i];
+						chb.checked = true;
+					}           
+				}  		
+				
+				//全不选
+				for(var i=1;i<chbs.length;i++)
+				{  
+				//若全选框的结果为没选中，则进行全不选操作,否则进入下一步	
+				if(obj.checked == false)
+					{
+						var chb = chbs[i];
+						chb.checked = false;
+					}         
+				}  		
+			}else
+		   {
+				//若子选择全选，全选框也选中。
+			    if(chbs[1].checked && chbs[2].checked && chbs[3].checked && chbs[4].checked)
+			    {	
+					chbs[0].checked = true;			
+			    }else//若子选项没有全选，全选框不选中。
+			    {		
+					chbs[0].checked = false;			  
+			    }
+			}	
+		}
+	</script>
+</body>
+</html>
